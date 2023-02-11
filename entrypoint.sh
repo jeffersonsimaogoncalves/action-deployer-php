@@ -13,9 +13,16 @@ else
     CMD_ARGS="$@"
 fi
 
+mkdir -p /github/home/.ssh
+
+eval $(ssh-agent -s)
+
+echo -e "StrictHostKeyChecking no" >> /etc/ssh/ssh_config
+
 install -m 600 -D /dev/null ~/.ssh/id_rsa
-echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+echo "$SSH_PRIVATE_KEY" > ~/.ssh/id_rsa
+ssh-keyscan -H $SSH_HOST > ~/.ssh/known_hosts
+ssh-add ~/.ssh/id_rsa
 
 deployer --version
 deployer $CMD_ARGS
