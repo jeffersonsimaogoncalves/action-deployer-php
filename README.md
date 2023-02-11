@@ -13,7 +13,7 @@ jeffersonsimaogoncalves/action-deployer-php@master
 - name: Deploy to prod server
   uses: jeffersonsimaogoncalves/action-deployer-php@master
   with:
-    args: deploy prod
+    args: deploy
    env:
     SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 ```
@@ -46,7 +46,7 @@ jobs:
       - name: Deploy
         uses: jeffersonsimaogoncalves/action-deployer-php@master
         with:
-          args: deploy prod
+          args: deploy
         env:
           SSH_PRIVATE_KEY: ${{ secrets.PRIVATE_KEY }}
 ```
