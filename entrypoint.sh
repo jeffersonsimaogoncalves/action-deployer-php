@@ -13,5 +13,9 @@ else
     CMD_ARGS="$@"
 fi
 
+install -m 600 -D /dev/null ~/.ssh/id_rsa
+echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+ssh-keyscan -H ${{ secrets.SSH_HOST }} > ~/.ssh/known_hosts
+
 deployer --version
 deployer $CMD_ARGS
