@@ -54,3 +54,8 @@ jobs:
 ### About
 
 * This project is based on top of https://github.com/deployphp/deployer
+
+
+## Credits
+
+This work is based on the [code by Sercan](https://github.com/musps/action-deployer-php).
