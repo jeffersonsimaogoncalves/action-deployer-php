@@ -4,14 +4,14 @@
 ### Usage
 
 ```
-musps/action-deployer-php@master
+jeffersonsimaogoncalves/action-deployer-php@master
 ```
 
 ### Example
 
 ```yaml
 - name: Deploy to prod server
-  uses: musps/action-deployer-php@master
+  uses: jeffersonsimaogoncalves/action-deployer-php@master
   with:
     args: deploy prod
    env:
@@ -22,7 +22,7 @@ musps/action-deployer-php@master
 
 * Set your ssh private key in your repository secrets.
 * Set the file and command as argument .
-* Current Deployer PHP version: `6.8.0`
+* Current Deployer PHP version: `7.1.4`
  
 ### Demo workflows
 
@@ -44,7 +44,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v1
       - name: Deploy
-        uses: musps/action-deployer-php@master
+        uses: jeffersonsimaogoncalves/action-deployer-php@master
         with:
           args: deploy prod
         env:
