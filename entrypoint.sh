@@ -13,7 +13,5 @@ else
     CMD_ARGS="$@"
 fi
 
-eval $(ssh-agent -s)
-
 deployer --version
 deployer $CMD_ARGS
